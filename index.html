@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #book-form {
+            display: none;
+            flex-direction: column;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="new-book-btn">NEW BOOK</button><br>
+    <br><button id="show-book-btn">SHOW BOOKS</button><br>
+    <br>
+    <form id="book-form" action="">
+        <label for="book-title">Title: </label>
+        <input name="book-title" type="text">
+
+        <label for="book-author">Author: </label>
+        <input name="book-author" type="text">
+
+        <label for="book-pages">Pages: </label>
+        <input name="book-pages" type="text">
+
+        <label for="book-radio-btns">Already Read?: </label>
+        <div name="book-radio-btns">
+            <label for="read-yes">Yes</label>
+            <input type="radio" name="book-read" id="read-yes" value="Yes">
+            <label for="read-no">No</label>
+            <input type="radio" name="book-read" id="read-no" value="No">
+        </div>
+
+        <input type="submit" value="Add Book">
+    </form>
+
+    <ul id="book-list">
+    </ul>
+
+    <script src="object-constructors.js"></script>
+    <script src="project-library.js"></script>
+</body>
+</html>
