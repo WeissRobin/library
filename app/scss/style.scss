@@ -1,0 +1,27 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main-content {
+    height: 100vh;
+}
+
+#control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#book-form {
+    display: none;
+    flex-direction: column;
+    max-width: 200px;
+}
