@@ -1,4 +1,4 @@
-//DOM elements - retard
+//DOM elements
 const new_book_btn = document.getElementById('new-book-btn');
 const book_form = document.getElementById('book-form');
 const book_list = document.getElementById('book-list');
