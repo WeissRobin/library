@@ -10,30 +10,30 @@
 <body>
     <main id="main-content">
         <section id="control-section">
-            
-            <button id="new-book-btn">NEW BOOK</button>
-            <button id="show-book-btn">SHOW BOOKS</button>
-            <form id="book-form" action="">
-                <label for="book-title">Title: </label>
-                <input name="book-title" type="text">
+            <div id="book-form-container">
+                <button id="new-book-btn">NEW BOOK</button>
+                <button id="show-book-btn">SHOW BOOKS</button>
+                <form id="book-form">
+                    <label for="book-title">Title: </label>
+                    <input name="book-title" type="text">
 
-                <label for="book-author">Author: </label>
-                <input name="book-author" type="text">
+                    <label for="book-author">Author: </label>
+                    <input name="book-author" type="text">
 
-                <label for="book-pages">Pages: </label>
-                <input name="book-pages" type="text">
+                    <label for="book-pages">Pages: </label>
+                    <input name="book-pages" type="text">
 
-                <label for="book-radio-btns">Already Read?: </label>
-                <div name="book-radio-btns">
-                    <label for="read-yes">Yes</label>
-                    <input type="radio" name="book-read" id="read-yes" value="Yes">
-                    <label for="read-no">No</label>
-                    <input type="radio" name="book-read" id="read-no" value="No">
-                </div>
-
+                    <label for="book-radio-btns">Already Read?: </label>
+                    <div name="book-radio-btns">
+                        <label for="read-yes">Yes</label>
+                        <input type="radio" name="book-read" id="read-yes" value="Yes">
+                        <label for="read-no">No</label>
+                        <input type="radio" name="book-read" id="read-no" value="No">
+                    </div>
                 <input type="submit" value="Add Book">
-            </form>
-            <div id="books-container">
+                </form>
+            </div>
+            <div id="books-list-container">
                 <ul id="book-list">
                 </ul>
             </div>

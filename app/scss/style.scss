@@ -30,11 +30,22 @@ video {
 
 #control-section {
     display: grid;
-    grid-template-areas: 
-    'form content';
-    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    'form list';
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: 100% 100%;
     height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+#book-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#books-list-container {
+    
 }
 
 #book-form {
