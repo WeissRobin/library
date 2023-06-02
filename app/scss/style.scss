@@ -1,26 +1,44 @@
+//Basic CSS reset
 html {
     font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
 
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    font-size: inherit;
 }
 
+//Actual code
 #main-content {
     height: 100vh;
 }
 
 #control-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: 
+    'form content';
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100% 100%;
     height: 100%;
 }
 
 #book-form {
+    grid-area: form;
     display: none;
     flex-direction: column;
     max-width: 200px;
