@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Chorasmian&display=swap');
+
 //Basic CSS reset
 html {
     font-size: 62.5%;
@@ -21,6 +23,7 @@ video {
     padding: 0;
     margin: 0;
     font-size: inherit;
+    font-family: 'Noto Sans Chorasmian', sans-serif;
 }
 
 //Actual code
@@ -44,13 +47,55 @@ video {
     flex-direction: column;
 }
 
-#books-list-container {
-    
-}
-
 #book-form {
     grid-area: form;
     display: none;
     flex-direction: column;
-    max-width: 200px;
+}
+
+#modal-book-form[open] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: show 1s;
+    border: 1px solid white;
+    box-shadow: 10px 10px 0px #da6467;
+    overflow: hidden;
+    font-size: 1.8rem;
+    padding: 2em;
+}
+
+#modal-box[data-active="true"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(black, .5);
+    animation: unfold 1s;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes unfold {
+    0% {
+        transform: scaleX(0) scaleY(0.005);
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
 }

@@ -9,10 +9,8 @@
 </head>
 <body>
     <main id="main-content">
-        <section id="control-section">
-            <div id="book-form-container">
-                <button id="new-book-btn">NEW BOOK</button>
-                <button id="show-book-btn">SHOW BOOKS</button>
+        <div id="modal-box" data-active="false">
+            <dialog id="modal-book-form">
                 <form id="book-form">
                     <label for="book-title">Title: </label>
                     <input name="book-title" type="text">
@@ -31,7 +29,15 @@
                         <input type="radio" name="book-read" id="read-no" value="No">
                     </div>
                 <input type="submit" value="Add Book">
+                <button id="close-book-btn">Close</button>
                 </form>
+            </dialog>
+        </div>
+        <section id="control-section">
+            <div id="book-form-container">
+                <img src="images/undraw_bookshelves_re_lxoy.svg" alt="">
+                <button id="new-book-btn">NEW BOOK</button>
+                <button id="show-book-btn">SHOW BOOKS</button>
             </div>
             <div id="books-list-container">
                 <ul id="book-list">
@@ -41,5 +47,6 @@
     </main>
 
     <script src="js/project-library.js"></script>
+    <script src="js/dialog.js"></script>
 </body>
 </html>
