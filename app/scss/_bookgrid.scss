@@ -1,18 +1,23 @@
 #book-app-grid {
     display: grid;
-    grid-template-areas:
-    'control-section list-section';
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100% 100%;
+    grid-template-areas: 
+    "ui-menu ui-menu"
+    "image-section list-section";
     height: 100%;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
+}
+
+#ui-menu {
+    grid-area: ui-menu;
 }
 
 #list-section {
     grid-area: list-section;
 }
 
-#control-section {
-    grid-area: control-section;
+#image-section{
+    grid-area: image-section;
 }

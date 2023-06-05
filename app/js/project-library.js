@@ -3,6 +3,7 @@ const new_book_btn = document.getElementById('new-book-btn');
 const book_form = document.getElementById('book-form');
 const book_list = document.getElementById('book-list');
 const book_show = document.getElementById('show-book-btn');
+const modal_book_form = document.getElementById('modal-book-form');
 
 //JS Code
 let myLibrary = [];
@@ -40,6 +41,7 @@ function booksDisplay() {
 
         //Set data atribute to each book - setting index for them
         book_li.setAttribute('data-book-index', [i]);
+        book_li.classList.add('book-list-card');
 
         book_li.innerText += `Title: ${myLibrary[i].title}
         Author: ${myLibrary[i].author}
@@ -75,14 +77,7 @@ function getRadioValue() {
     return value;
 }
 
-//Shows the form after clicking on a button
-function ShowForm() {
-    book_form.style.display = 'flex';
-}
-
 //EVENT LISTENERS-------------------------------------------------------------
-//Click - Displays book form
-new_book_btn.addEventListener('click', ShowForm);
 
 //Submit - Sends data
 book_form.addEventListener('submit', (e) => {
@@ -99,7 +94,4 @@ book_form.addEventListener('submit', (e) => {
     //Adding a new book
     addBookToLibrary(newBook);
 });
-
-//Change the status of read property
-
 book_show.addEventListener('click', booksDisplay);

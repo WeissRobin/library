@@ -57,7 +57,7 @@
   height: 100%;
   width: 100%;
   transform: scale(1);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   animation: unfoldOut 1s forwards;
 }
 
@@ -67,57 +67,70 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   animation: unfoldIn 1s forwards;
 }
 
 #book-app-grid {
   display: grid;
-  grid-template-areas: "control-section list-section";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100% 100%;
+  grid-template-areas: "ui-menu ui-menu" "image-section list-section";
   height: 100%;
+  grid-template-rows: 15% 85%;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
+}
+
+#ui-menu {
+  grid-area: ui-menu;
 }
 
 #list-section {
   grid-area: list-section;
 }
 
-#control-section {
-  grid-area: control-section;
+#image-section {
+  grid-area: image-section;
 }
 
-#buttons-container {
+#ui-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  margin-top: 2em;
+  justify-content: space-evenly;
+  width: 100%;
 }
-#buttons-container button {
+#ui-menu button {
+  position: relative;
+  z-index: 0;
   color: white;
-  background: none;
+  background: #da6467;
+  box-shadow: 0px 10px 0px rgba(218, 100, 103, 0.5);
+  border-radius: 1px;
   width: 100%;
   max-width: 200px;
-  font-size: 2rem;
-  padding: 0.7em;
-  margin-top: 1em;
-  cursor: pointer;
-  outline: none;
+  font-size: 2.1rem;
+  padding: 0.5em 1em;
   border: 2px solid #da6467;
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: -2px;
-  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-  text-shadow: none;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  border-radius: 0.3em;
+  cursor: pointer;
 }
-#buttons-container button:hover {
-  background: none;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
+#ui-menu button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #da6467;
+}
+#ui-menu button:hover {
+  top: 10px;
+  box-shadow: none;
+}
+#ui-menu button:hover::after {
+  width: 100%;
 }
 
 html {
@@ -150,7 +163,7 @@ body {
   background-image: url("../images/UI-background.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 100%;
   background-position: bottom;
 }
 

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Chorasmian&display=swap');
 @import './keyframes.scss';
 @import './modalbookform.scss';
-@import './bookgrid';
-@import './variables';
-@import './buttonscontainer';
+@import './bookgrid.scss';
+@import './variables.scss';
+@import './uimenu.scss';
 
 //Basic CSS reset
 html {
@@ -36,7 +36,7 @@ body {
     background-image: url('../images/UI-background.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 100%;
     background-position: bottom;
 }
 //Actual code

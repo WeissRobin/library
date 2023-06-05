@@ -23,7 +23,7 @@
     height: 100%;
     width: 100%;
     transform: scale(1);
-    background-color: rgba(black, .5);
+    background-color: rgba(black, .2);
     animation: unfoldOut 1s forwards;
 }
 
@@ -33,6 +33,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(black, .5);
+    background-color: rgba(black, .2);
     animation: unfoldIn 1s forwards;
 }
