@@ -1,0 +1,38 @@
+#book-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-book-form[open] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: show 1s;
+    border: 1px solid white;
+    box-shadow: 10px 10px 0px #da6467;
+    overflow: hidden;
+    font-size: 1.8rem;
+    padding: 2em;
+}
+
+#modal-box[data-active="true"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(1);
+    background-color: rgba(black, .5);
+    animation: unfoldOut 1s forwards;
+}
+
+#modal-box[data-active="false"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(black, .5);
+    animation: unfoldIn 1s forwards;
+}

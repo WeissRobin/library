@@ -1,0 +1,38 @@
+//Reveal book form animation
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+//Unfold animation for book-form
+@keyframes unfoldOut {
+    0% {
+        transform: scaleX(0) scaleY(0.005);
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+//FoldIn animation for book-form
+@keyframes unfoldIn {
+    0% {
+        transform: scaleX(1) scaleY(1);
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scaleX(0) scaleY(0);
+    }
+}

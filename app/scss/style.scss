@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Chorasmian&display=swap');
+@import './keyframes.scss';
+@import './modalbookform.scss';
+@import './bookgrid';
+@import './variables';
+@import './buttonscontainer';
 
 //Basic CSS reset
 html {
@@ -8,15 +13,16 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 img,
 picture,
 svg,
 video {
-  display: block;
-  max-width: 100%;
+    width: 100%;
+    display: block;
+    max-width: 800px;
 }
 
 * {
@@ -26,76 +32,14 @@ video {
     font-family: 'Noto Sans Chorasmian', sans-serif;
 }
 
+body {
+    background-image: url('../images/UI-background.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+}
 //Actual code
 #main-content {
     height: 100vh;
-}
-
-#control-section {
-    display: grid;
-    grid-template-areas:
-    'form list';
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 100% 100%;
-    height: 100%;
-    justify-items: center;
-    align-items: center;
-}
-
-#book-form-container {
-    display: flex;
-    flex-direction: column;
-}
-
-#book-form {
-    grid-area: form;
-    display: none;
-    flex-direction: column;
-}
-
-#modal-book-form[open] {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: show 1s;
-    border: 1px solid white;
-    box-shadow: 10px 10px 0px #da6467;
-    overflow: hidden;
-    font-size: 1.8rem;
-    padding: 2em;
-}
-
-#modal-box[data-active="true"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(black, .5);
-    animation: unfold 1s;
-}
-
-@keyframes show {
-    0% {
-        opacity: 0;
-    }
-    70% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes unfold {
-    0% {
-        transform: scaleX(0) scaleY(0.005);
-    }
-    50% {
-        transform: scaleX(1) scaleY(0.005);
-    }
-    100% {
-        transform: scaleX(1) scaleY(1);
-    }
 }

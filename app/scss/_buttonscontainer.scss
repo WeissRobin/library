@@ -1,0 +1,32 @@
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+
+    button {
+        color: white;
+        background: none;
+        width: 100%;
+        max-width: 200px;
+        font-size: 2rem;
+        padding: .7em;
+        margin-top: 1em;
+        cursor: pointer;
+        outline: none;
+        border: 2px solid $main-color;
+        outline: 2px solid rgba(white, .5);
+        outline-offset: -2px;
+        transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        text-shadow: none;
+        box-shadow: inset 0 0 20px rgba(white, 0);
+
+        &:hover {
+            background: none;
+            box-shadow: inset 0 0 20px rgba(white, .5), 0 0 20px rgba(white, .2);
+            border: 2px solid white;
+            outline-color: rgba(white, 0);
+            outline-offset: 15px;
+        }
+    }
+}
