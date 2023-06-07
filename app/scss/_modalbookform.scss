@@ -1,17 +1,37 @@
 #book-form {
     display: flex;
     flex-direction: column;
+
+    label {
+        font-weight: 500;
+    }
+
+    input:not(input[type=submit]) {
+        font-weight: 300;
+        font-size: 1.6rem;
+        padding: .5em 0 .5em .3em;
+        margin-bottom: 1em;
+        border: none;
+        border-bottom: 1px rgba(black, .2) solid; 
+        &:focus {
+            outline: none;
+            border-bottom: black 1px solid;
+        }
+    }
 }
 
 #modal-book-form[open] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: show 1s;
     border: 1px solid white;
-    box-shadow: 10px 10px 0px #da6467;
-    overflow: hidden;
+    border-radius: 5px;
     font-size: 1.8rem;
     padding: 2em;
 }
@@ -20,10 +40,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     height: 100%;
     width: 100%;
     transform: scale(1);
-    background-color: rgba(black, .2);
+    background-color: rgba(black, .1);
     animation: unfoldOut 1s forwards;
 }
 

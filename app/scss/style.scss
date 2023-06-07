@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Chorasmian&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;300;400;500;600;700&display=swap');
 @import './keyframes.scss';
 @import './modalbookform.scss';
 @import './bookgrid.scss';
@@ -22,24 +22,35 @@ svg,
 video {
     width: 100%;
     display: block;
-    max-width: 800px;
+    max-width: 700px;
 }
 
 * {
     padding: 0;
     margin: 0;
     font-size: inherit;
-    font-family: 'Noto Sans Chorasmian', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {
-    background-image: url('../images/UI-background.svg');
+    background-image: url('../images/wave-background.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: cover;
     background-position: bottom;
 }
 //Actual code
 #main-content {
     height: 100vh;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 7rem);
+    width: 100%;
+    max-width: 700px;
+    color: $primary--btn;
+    text-align: left;
+    span {
+        color: $accent--clr;
+    }
 }

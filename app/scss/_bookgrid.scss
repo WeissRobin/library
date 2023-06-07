@@ -1,10 +1,11 @@
 #book-app-grid {
     display: grid;
     grid-template-areas: 
-    "ui-menu ui-menu"
+    "welcome-mes ui-menu"
+    "welcome-mes list-section"
     "image-section list-section";
     height: 100%;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
@@ -20,4 +21,9 @@
 
 #image-section{
     grid-area: image-section;
+}
+
+#welcome-mes {
+    grid-row: 1 / 2;
+    grid-area: welcome-mes;
 }
