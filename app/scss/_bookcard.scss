@@ -1,0 +1,20 @@
+.book-list-card {
+    list-style: none;
+    font-size: 1.5rem;
+    color: $primary--btn;
+    background-color: $accent--clr--lighter;
+    padding: 1em;
+    border-radius: 3px;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .change-btn {
+        
+    }
+
+    .remove-btn {
+        margin-left: 1em;
+    }
+}

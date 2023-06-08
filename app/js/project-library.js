@@ -19,7 +19,6 @@ function Book(author, title, pages, isRead) {
 //Book function that reads status and changes it.
 Book.prototype.changeStatus = function() {
     this.isRead == 'Yes' ? this.isRead = 'No' : this.isRead = 'Yes';
-    booksDisplay();
 }
 
 //Adds a book to an array
@@ -32,33 +31,48 @@ function booksDisplay() {
     book_list.innerHTML = '';
 
     for (let i = 0; i < myLibrary.length; i++) {
-        //Init of components
+        //Init of buttons
         const change_button = document.createElement('button');
         const remove_button = document.createElement('button');
+        change_button.classList.add('change-btn');
+        remove_button.classList.add('remove-btn');
         change_button.textContent = 'Change Status';
         remove_button.textContent = 'Remove Book';
-        let book_li = document.createElement('li');
 
+        //Init li element for ul element
+        const book_li = document.createElement('li');
+
+        //Init book heading
+        const book_heading = document.createElement('h2');
+        book_heading.innerText = `Title: ${myLibrary[i].title}`;
+        book_li.appendChild(book_heading);
+        //Init book body
         //Set data atribute to each book - setting index for them
         book_li.setAttribute('data-book-index', [i]);
         book_li.classList.add('book-list-card');
 
-        book_li.innerText += `Title: ${myLibrary[i].title}
-        Author: ${myLibrary[i].author}
+        //Init book body
+        const book_body = document.createElement('div');
+        book_body.innerText = `Author: ${myLibrary[i].author}
         Pages: ${myLibrary[i].pages}
-        Already read: ${myLibrary[i].isRead}
-        `
+        Already read?: ${myLibrary[i].isRead}
+        `;
+        //Append book component into DOM
+        book_li.appendChild(book_heading);
+        book_li.appendChild(book_body);
+        book_li.appendChild(change_button);
+        book_li.appendChild(remove_button);
         book_list.appendChild(book_li);
-        book_list.appendChild(change_button);
-        book_list.appendChild(remove_button);
+
         //Event listener for change button
-        change_button.addEventListener('click', (e) => { 
-            const index = e.target.previousSibling.getAttribute('data-book-index');
+        change_button.addEventListener('click', (e) => {
+            const index = e.target.parentElement.getAttribute('data-book-index');
             myLibrary[index].changeStatus();
+            booksDisplay();
         });
         //Event listener for remove book
         remove_button.addEventListener('click', (e) => { 
-            const index = e.target.previousSibling.getAttribute('data-book-index');
+            const index = e.target.parentElement.getAttribute('data-book-index');
             myLibrary.splice(index, 1);
             booksDisplay();
         });

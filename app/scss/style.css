@@ -137,16 +137,6 @@
   border-radius: 0.3em;
   cursor: pointer;
 }
-#ui-menu button::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background-color: #c75d52;
-}
 #ui-menu button:hover {
   top: 10px;
   box-shadow: none;
@@ -164,6 +154,21 @@
   background: #c75d52;
   box-shadow: 0px 10px 0px rgba(199, 93, 82, 0.5);
   border: 2px solid #c75d52;
+}
+
+.book-list-card {
+  list-style: none;
+  font-size: 1.5rem;
+  color: #1b0b09;
+  background-color: #e6b8b3;
+  padding: 1em;
+  border-radius: 3px;
+}
+.book-list-card h2 {
+  font-size: 2rem;
+}
+.book-list-card .remove-btn {
+  margin-left: 1em;
 }
 
 html {
