@@ -17,6 +17,14 @@
 
 #list-section {
     grid-area: list-section;
+    display: flex;
+    height: 100%;
+    width: 80%;
+    overflow-y: scroll;
+
+    #book-list-container {
+        width: 100%;
+    }
 }
 
 #image-section{

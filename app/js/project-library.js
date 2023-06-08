@@ -1,9 +1,6 @@
-//DOM elements -dwda
-const new_book_btn = document.getElementById('new-book-btn');
 const book_form = document.getElementById('book-form');
 const book_list = document.getElementById('book-list');
 const book_show = document.getElementById('show-book-btn');
-const modal_book_form = document.getElementById('modal-book-form');
 
 //JS Code
 let myLibrary = [];
@@ -32,12 +29,18 @@ function booksDisplay() {
 
     for (let i = 0; i < myLibrary.length; i++) {
         //Init of buttons
+        const button_container = document.createElement('div');
         const change_button = document.createElement('button');
         const remove_button = document.createElement('button');
         change_button.classList.add('change-btn');
         remove_button.classList.add('remove-btn');
         change_button.textContent = 'Change Status';
         remove_button.textContent = 'Remove Book';
+
+        //Init of buttons container
+        button_container.classList.add('buttons-card-body');
+        button_container.appendChild(change_button);
+        button_container.appendChild(remove_button);
 
         //Init li element for ul element
         const book_li = document.createElement('li');
@@ -53,6 +56,7 @@ function booksDisplay() {
 
         //Init book body
         const book_body = document.createElement('div');
+        book_body.classList.add('book-card-body');
         book_body.innerText = `Author: ${myLibrary[i].author}
         Pages: ${myLibrary[i].pages}
         Already read?: ${myLibrary[i].isRead}
@@ -60,13 +64,12 @@ function booksDisplay() {
         //Append book component into DOM
         book_li.appendChild(book_heading);
         book_li.appendChild(book_body);
-        book_li.appendChild(change_button);
-        book_li.appendChild(remove_button);
+        book_li.appendChild(button_container);
         book_list.appendChild(book_li);
 
         //Event listener for change button
         change_button.addEventListener('click', (e) => {
-            const index = e.target.parentElement.getAttribute('data-book-index');
+            const index = e.target.parentElement.parentElement.getAttribute('data-book-index');
             myLibrary[index].changeStatus();
             booksDisplay();
         });
@@ -108,4 +111,5 @@ book_form.addEventListener('submit', (e) => {
     //Adding a new book
     addBookToLibrary(newBook);
 });
+
 book_show.addEventListener('click', booksDisplay);
