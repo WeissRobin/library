@@ -10,6 +10,7 @@
 </head>
 <body>
     <main id="main-content">
+        <h2 class="notification"></h2>
         <div id="modal-box">
             <dialog id="modal-book-form">
                 <form id="book-form">
@@ -22,10 +23,10 @@
                     <label for="book-pages">Pages: </label>
                     <input name="book-pages" type="text">
 
-                    <label for="book-radio-btns">Already Read?: </label>
                     <div name="book-radio-btns">
+                    <label for="book-radio-btns">Already Read?:</label>
                         <label for="read-yes">Yes</label>
-                        <input type="radio" name="book-read" id="read-yes" value="Yes">
+                        <input type="radio" name="book-read" id="read-yes" value="Yes" checked>
                         <label for="read-no">No</label>
                         <input type="radio" name="book-read" id="read-no" value="No">
                     </div>
@@ -53,7 +54,7 @@
             </section>
         </div>
     </main>
-    <script type="module" src="js/project-library.js"></script>
+    <script type="module" src="js/library.js"></script>
     <script src="js/dialog.js"></script>
     <script src="https://kit.fontawesome.com/7290e96d25.js" crossorigin="anonymous"></script>
 </body>

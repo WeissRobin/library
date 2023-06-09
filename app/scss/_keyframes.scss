@@ -36,3 +36,19 @@
         transform: scaleX(0) scaleY(0);
     }
 }
+
+//For notification
+@keyframes reveal {
+    0% {
+        top: 18%;
+        opacity: 0;
+    }
+    30% {
+        top: 20%;
+        opacity: 1;
+    }
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}

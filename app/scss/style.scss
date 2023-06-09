@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;300;400;500;600;700&display=swap');
 @import './keyframes.scss';
-@import './modalbookform.scss';
-@import './bookgrid.scss';
+@import './book-form.scss';
+@import './book-grid.scss';
 @import './variables.scss';
-@import './uimenu.scss';
-@import './bookcard.scss';
+@import './ui-buttons.scss';
+@import './book-card.scss';
+@import './notification.scss';
 
 //Basic CSS reset
 html {

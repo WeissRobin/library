@@ -32,8 +32,35 @@
     transform: scaleX(0) scaleY(0);
   }
 }
-#modal-book-form[open] {
-  position: relative;
+@keyframes reveal {
+  0% {
+    top: 18%;
+    opacity: 0;
+  }
+  30% {
+    top: 20%;
+    opacity: 1;
+  }
+  100% {
+    top: 20%;
+    opacity: 1;
+  }
+}
+#modal-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#modal-box h2 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  display: none;
+}
+#modal-box #modal-book-form[open] {
+  position: absolute;
   top: 50%;
   left: 50%;
   display: flex;
@@ -47,7 +74,7 @@
   font-size: 1.8rem;
   padding: 2em;
 }
-#modal-book-form[open] #close-book-btn {
+#modal-box #modal-book-form[open] #close-book-btn {
   position: absolute;
   top: 10px;
   left: calc(100% - 40px);
@@ -59,17 +86,17 @@
   background-color: hsl(6, 51%, 55%);
   cursor: pointer;
 }
-#modal-book-form[open] #close-book-btn:hover {
+#modal-box #modal-book-form[open] #close-book-btn:hover {
   background-color: hsl(6, 51%, 45%);
 }
-#modal-book-form[open] #book-form {
+#modal-box #modal-book-form[open] #book-form {
   display: flex;
   flex-direction: column;
 }
-#modal-book-form[open] #book-form label {
+#modal-box #modal-book-form[open] #book-form label {
   font-weight: 500;
 }
-#modal-book-form[open] #book-form input:not(input[type=submit]) {
+#modal-box #modal-book-form[open] #book-form input:not(input[type=submit]) {
   font-weight: 300;
   font-size: 1.6rem;
   padding: 0.5em 0 0.5em 0.3em;
@@ -77,11 +104,11 @@
   border: none;
   border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
 }
-#modal-book-form[open] #book-form input:not(input[type=submit]):focus {
+#modal-box #modal-book-form[open] #book-form input:not(input[type=submit]):focus {
   outline: none;
   border-bottom: black 1px solid;
 }
-#modal-book-form[open] #book-form input[type=submit] {
+#modal-box #modal-book-form[open] #book-form input[type=submit] {
   color: white;
   background-color: hsl(115, 43%, 46%);
   border: none;
@@ -89,14 +116,8 @@
   padding: 0.2em 0em;
   cursor: pointer;
 }
-#modal-book-form[open] #book-form input[type=submit]:hover {
+#modal-box #modal-book-form[open] #book-form input[type=submit]:hover {
   background-color: hsl(115, 43%, 40%);
-}
-
-#modal-box {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 #modal-box[data-active=true] {
@@ -237,6 +258,33 @@
 }
 .book-list-card .buttons-card-body .remove-btn:hover {
   background-color: hsl(6, 51%, 40%);
+}
+
+.notification {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  display: none;
+  animation: reveal 3s;
+  isolation: isolate;
+  z-index: 1000;
+}
+.notification i {
+  margin-right: 0.3em;
+}
+
+.warning {
+  background-color: hsl(6, 51%, 55%);
+  color: white;
+}
+
+.success {
+  background-color: hsl(115, 43%, 46%);
+  color: white;
 }
 
 html {
