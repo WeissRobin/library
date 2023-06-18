@@ -28,7 +28,11 @@
 }
 
 #image-section{
+    width: 100%;
     grid-area: image-section;
+    img {
+        margin: auto;
+    }
 }
 
 #welcome-mes {
